@@ -1,5 +1,5 @@
-
 import { FileText } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const AboutSection = () => {
   return (
@@ -8,17 +8,28 @@ const AboutSection = () => {
         <h2 className="section-title">À propos</h2>
         
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="bg-white rounded-lg shadow-md p-6 md:p-8 transform hover:scale-[1.02] transition-transform duration-300">
-            <div className="prose max-w-none">
-              <p className="text-lg mb-4">
-                Je m'appelle Yanis, j'ai 17 ans, et je suis passionné d'informatique depuis plusieurs années. Je maîtrise HTML, PHP, Python et les CMS comme WordPress.
-              </p>
-              <p className="text-lg mb-4">
-                J'ai conçu le site web de mon lycée, validé par la direction et la région, et obtenu la 2e place au concours 'Nuit du Code' (niveau régional).
-              </p>
-              <p className="text-lg">
-                Je suis autonome, rigoureux, et j'aime apprendre. Je suis actuellement à la recherche d'une alternance pour approfondir mes compétences et financer mes études.
-              </p>
+          <div className="flex flex-col items-center md:items-start space-y-6">
+            <Avatar className="w-40 h-40 border-4 border-primary shadow-lg">
+              <AvatarImage 
+                src="/lovable-uploads/27506b40-d67d-47a1-9696-51a0a8c1012c.png" 
+                alt="Yanis Boussaid" 
+                className="object-cover"
+              />
+              <AvatarFallback>YB</AvatarFallback>
+            </Avatar>
+
+            <div className="bg-white rounded-lg shadow-md p-6 md:p-8 transform hover:scale-[1.02] transition-transform duration-300">
+              <div className="prose max-w-none">
+                <p className="text-lg mb-4">
+                  Je m'appelle Yanis, j'ai 17 ans, et je suis passionné d'informatique depuis plusieurs années. Je maîtrise HTML, PHP, Python et les CMS comme WordPress.
+                </p>
+                <p className="text-lg mb-4">
+                  J'ai conçu le site web de mon lycée, validé par la direction et la région, et obtenu la 2e place au concours 'Nuit du Code' (niveau régional).
+                </p>
+                <p className="text-lg">
+                  Je suis autonome, rigoureux, et j'aime apprendre. Je suis actuellement à la recherche d'une alternance pour approfondir mes compétences et financer mes études.
+                </p>
+              </div>
             </div>
           </div>
 
