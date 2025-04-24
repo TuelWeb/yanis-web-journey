@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Mail, Linkedin, Github, Phone } from "lucide-react";
 
@@ -138,17 +137,9 @@ const ContactSection = () => {
                 </a>
                 
                 <a 
-                  href="#" 
-                  className="flex items-center text-gray-700 hover:text-primary transition-colors group"
-                >
-                  <span className="bg-primary bg-opacity-10 p-3 rounded-full mr-4 group-hover:bg-opacity-20 transition-all">
-                    <Linkedin className="text-primary" size={20} />
-                  </span>
-                  <span>LinkedIn</span>
-                </a>
-                
-                <a 
-                  href="#" 
+                  href="https://github.com/osayanis" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center text-gray-700 hover:text-primary transition-colors group"
                 >
                   <span className="bg-primary bg-opacity-10 p-3 rounded-full mr-4 group-hover:bg-opacity-20 transition-all">
@@ -161,7 +152,7 @@ const ContactSection = () => {
                   <span className="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
                     <Phone className="text-primary" size={20} />
                   </span>
-                  <span>Sur demande</span>
+                  <span>06.13.94.24.79</span>
                 </div>
               </div>
             </div>

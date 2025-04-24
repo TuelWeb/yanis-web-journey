@@ -1,43 +1,43 @@
-
 import { Code, Database, Globe, Server } from "lucide-react";
 import { SkillIcon } from "@/components/ui/skill-icon";
 import ServiceCard from "@/components/ServiceCard";
+import { Progress } from "@/components/ui/progress";
 
 type Skill = {
   name: string;
   Icon: typeof Code;
   color: string;
-  level?: string;
+  level: number;
 };
 
 const SkillsSection = () => {
   const languages: Skill[] = [
-    { name: "HTML", Icon: Code, color: "text-tech-html" },
-    { name: "PHP", Icon: Code, color: "text-tech-php" },
-    { name: "Python", Icon: Code, color: "text-tech-python" },
+    { name: "HTML", Icon: Code, color: "text-tech-html", level: 100 },
+    { name: "PHP", Icon: Code, color: "text-tech-php", level: 80 },
+    { name: "Python", Icon: Code, color: "text-tech-python", level: 85 },
   ];
 
   const libraries: Skill[] = [
-    { name: "Pygame", Icon: Code, color: "text-tech-python" },
+    { name: "Pygame", Icon: Code, color: "text-tech-python", level: 75 },
   ];
 
   const cms: Skill[] = [
-    { name: "WordPress", Icon: Globe, color: "text-tech-wordpress" },
+    { name: "WordPress", Icon: Globe, color: "text-tech-wordpress", level: 90 },
   ];
 
   const systems: Skill[] = [
-    { name: "Ubuntu", Icon: Server, color: "text-tech-ubuntu" },
-    { name: "Debian", Icon: Server, color: "text-tech-debian" },
-    { name: "CentOS", Icon: Server, color: "text-tech-centos" },
+    { name: "Ubuntu", Icon: Server, color: "text-tech-ubuntu", level: 85 },
+    { name: "Debian", Icon: Server, color: "text-tech-debian", level: 80 },
+    { name: "CentOS", Icon: Server, color: "text-tech-centos", level: 75 },
   ];
 
   const servers: Skill[] = [
-    { name: "Apache", Icon: Server, color: "text-tech-apache" },
-    { name: "Nginx", Icon: Server, color: "text-tech-nginx" },
+    { name: "Apache", Icon: Server, color: "text-tech-apache", level: 85 },
+    { name: "Nginx", Icon: Server, color: "text-tech-nginx", level: 80 },
   ];
 
   const security: Skill[] = [
-    { name: "SSL/HTTPS", Icon: Database, color: "text-tech-ssl" },
+    { name: "SSL/HTTPS", Icon: Database, color: "text-tech-ssl", level: 90 },
   ];
 
   const services = [
@@ -62,14 +62,19 @@ const SkillsSection = () => {
   const skillCard = (title: string, skills: Skill[]) => (
     <div className="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
       <h3 className="text-xl font-semibold mb-4 text-gray-800">{title}</h3>
-      <div className="skill-grid">
+      <div className="space-y-4">
         {skills.map((skill) => (
-          <SkillIcon 
-            key={skill.name}
-            icon={skill.Icon}
-            name={skill.name}
-            color={skill.color}
-          />
+          <div key={skill.name} className="space-y-2">
+            <div className="flex items-center justify-between">
+              <SkillIcon 
+                icon={skill.Icon}
+                name={skill.name}
+                color={skill.color}
+              />
+              <span className="text-sm font-medium">{skill.level}%</span>
+            </div>
+            <Progress value={skill.level} className="h-2" />
+          </div>
         ))}
       </div>
     </div>
